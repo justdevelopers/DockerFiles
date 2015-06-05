@@ -1,1 +1,1 @@
-./Java/Dockerfile
+Java/Dockerfile
