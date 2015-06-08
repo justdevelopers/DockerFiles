@@ -12,7 +12,7 @@ RUN apt-get install -y \
     wget \
     tar 
     
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install python
+RUN apt-get install -y python2.7
 
 VOLUME  ["/data/teamcity"]
 ENV TEAMCITY_DATA_PATH /data/teamcity
