@@ -10,7 +10,8 @@ WORKDIR /data
 
 RUN apt-get install -y \
     wget \
-    tar
+    tar \
+    python
 
 VOLUME  ["/data/teamcity"]
 ENV TEAMCITY_DATA_PATH /data/teamcity
