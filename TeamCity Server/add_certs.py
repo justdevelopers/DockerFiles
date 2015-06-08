@@ -52,4 +52,4 @@ if __name__ == "__main__":
 
         importer.install(certificate_path)
 
-     subprocess.Popen(["/bin/sh", "/opt/TeamCity/bin/teamcity-server.sh", "run"])
+    subprocess.Popen(["/bin/sh", "/opt/TeamCity/bin/teamcity-server.sh", "run"])
