@@ -8,11 +8,12 @@ ENV TEAMCITY_DATA_PATH /var/lib/teamcity
 
 WORKDIR /data
 
-RUN add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe"
-
 RUN apt-get install -y \
     wget \
-    tar \
+    tar
+    
+    
+RUN apt-get intall -y \
     build-essential
     
 RUN wget http://python.org/ftp/python/3.3.0/Python-3.3.0.tar.bz2 && \
