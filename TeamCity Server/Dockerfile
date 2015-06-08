@@ -21,5 +21,10 @@ RUN wget $TEAMCITY_DOWNLOAD/$TEAMCITY_PACKAGE && \
     tar zxf $TEAMCITY_PACKAGE -C /opt && \
     rm -rf $TEAMCITY_PACKAGE
 
+ENV STORAGE_DIRECTORY $JAVA_HOME/jre/lib/security/cacerts/lib/security/cacerts
+ENV MOUNT_DIRECTORY /data/teamcity
+
+ADD add_certs.py, add_certs.py
+
 EXPOSE 8111
-CMD ["/opt/TeamCity/bin/teamcity-server.sh", "run"]
+CMD add_certs.py && ["/opt/TeamCity/bin/teamcity-server.sh", "run"]
