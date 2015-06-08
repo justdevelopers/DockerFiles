@@ -21,7 +21,7 @@ RUN wget $TEAMCITY_DOWNLOAD/$TEAMCITY_PACKAGE && \
     tar zxf $TEAMCITY_PACKAGE -C /opt && \
     rm -rf $TEAMCITY_PACKAGE
 
-ENV STORAGE_DIRECTORY $JAVA_HOME/jre/lib/security/cacerts/lib/security/cacerts
+ENV STORAGE_DIRECTORY $JAVA_HOME/jre/lib/security/cacerts
 ENV MOUNT_DIRECTORY /data/teamcity
 
 ADD add_certs.py, add_certs.py
