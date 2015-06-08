@@ -8,6 +8,8 @@ ENV TEAMCITY_DATA_PATH /var/lib/teamcity
 
 WORKDIR /data
 
+RUN add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe"
+
 RUN apt-get install -y \
     wget \
     tar \
