@@ -10,8 +10,9 @@ WORKDIR /data
 
 RUN apt-get install -y \
     wget \
-    tar \
-    python
+    tar 
+    
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install python
 
 VOLUME  ["/data/teamcity"]
 ENV TEAMCITY_DATA_PATH /data/teamcity
