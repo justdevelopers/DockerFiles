@@ -12,7 +12,11 @@ RUN apt-get install -y \
     wget \
     tar 
     
-RUN apt-get install python  --force-yes -y
+RUN wget http://python.org/ftp/python/3.3.0/Python-3.3.0.tar.bz2 && \
+    tar jxf ./Python-3.3.0.tar.bz2 && \
+    cd ./Python-3.3.0 && \
+    ./configure --prefix=/opt/python3.3 && \
+    make && sudo make install
 
 VOLUME  ["/data/teamcity"]
 ENV TEAMCITY_DATA_PATH /data/teamcity
