@@ -15,7 +15,7 @@ RUN apt-get install -y \
     
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get intall -y \
+RUN apt-get install -y \
     build-essential
     
 RUN wget http://python.org/ftp/python/3.3.0/Python-3.3.0.tar.bz2 && \
