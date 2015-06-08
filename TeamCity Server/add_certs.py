@@ -51,3 +51,5 @@ if __name__ == "__main__":
     for certificate_path in importer.list(mount_directory):
 
         importer.install(certificate_path)
+
+     subprocess.call(["/opt/TeamCity/bin/teamcity-server.sh", "run"])
