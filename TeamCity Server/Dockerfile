@@ -13,6 +13,8 @@ RUN apt-get install -y \
     tar
     
     
+ENV DEBIAN_FRONTEND noninteractive
+
 RUN apt-get intall -y \
     build-essential
     
