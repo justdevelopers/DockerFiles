@@ -12,7 +12,7 @@ RUN apt-get install -y \
     wget \
     tar 
     
-RUN apt-get install -y python2.7
+RUN apt-get install python  --force-yes -y
 
 VOLUME  ["/data/teamcity"]
 ENV TEAMCITY_DATA_PATH /data/teamcity
