@@ -10,8 +10,7 @@ WORKDIR /data
 
 RUN apt-get install -y \
     wget \
-    tar \
-    gcc
+    tar
     
 RUN wget http://python.org/ftp/python/3.3.0/Python-3.3.0.tar.bz2 && \
     tar jxf ./Python-3.3.0.tar.bz2 && \
