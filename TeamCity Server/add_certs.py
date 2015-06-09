@@ -48,7 +48,7 @@ if __name__ == "__main__":
     storage_password = os.environ.get("STORAGE_PASSWORD")
     mount_directory = os.environ.get("MOUNT_DIRECTORY")
 
-    importer = CertificateImporter(storage_directory)
+    importer = CertificateImporter(storage_directory, storage_password)
 
     for certificate_path in importer.list(mount_directory):
 
