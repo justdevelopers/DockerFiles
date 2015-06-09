@@ -33,4 +33,4 @@ ENV MOUNT_DIRECTORY /data/teamcity
 ADD add_certs.py add_certs.py
 
 EXPOSE 8111
-CMD ["python", "-c", "add_certs.py"]
+CMD ["/opt/TeamCity/bin/teamcity-server.sh", "run"]
