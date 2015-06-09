@@ -5,9 +5,10 @@ import subprocess
 
 class CertificateImporter:
 
-    def __init__(self, storage_directory):
+    def __init__(self, storage_directory, storage_password):
 
         self.storage_directory = storage_directory
+        self.storage_password = storage_password
 
         if not os.path.exists(self.storage_directory):
 
@@ -39,11 +40,12 @@ class CertificateImporter:
         new_path = os.path.join(storage_directory, filename)
         os.rename(certificate_path, new_path)
 
-        subprocess.call(["keytool", "-importcert",  "-file", new_path, "-keystore", self.storage_directory])
-
+        subprocess.call(["keytool", "-importcert", "-noprompt", "-trustcacerts", "-file", new_path, "-keystore", self.storage_directory, "-storepass", self.storage_password])
+       
 if __name__ == "__main__":
 
     storage_directory = os.environ.get("STORAGE_DIRECTORY")
+    storage_password = os.environ.get("STORAGE_PASSWORD")
     mount_directory = os.environ.get("MOUNT_DIRECTORY")
 
     importer = CertificateImporter(storage_directory)
@@ -51,5 +53,3 @@ if __name__ == "__main__":
     for certificate_path in importer.list(mount_directory):
 
         importer.install(certificate_path)
-
-    subprocess.Popen(["/bin/sh", "/opt/TeamCity/bin/teamcity-server.sh", "run"])
