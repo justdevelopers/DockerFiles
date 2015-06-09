@@ -15,7 +15,7 @@ RUN apt-get install -y \
 RUN wget http://python.org/ftp/python/3.3.0/Python-3.3.0.tar.bz2 && \
     tar jxf ./Python-3.3.0.tar.bz2 && \
     cd ./Python-3.3.0 && \
-    ./configure --prefix=/opt/python3.3 && \
+    ./configure && \
     make && sudo make install
 
 VOLUME  ["/data/teamcity"]
