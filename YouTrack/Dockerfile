@@ -2,7 +2,7 @@ FROM justdevelopers/java
 
 MAINTAINER JustDevelopers
 
-ENV YOUTRACK_VERSION 6.0.12463
+ENV YOUTRACK_VERSION 6.0.12634
 RUN mkdir -p /opt/youtrack
 RUN wget -cq http://download.jetbrains.com/charisma/youtrack-$YOUTRACK_VERSION.jar -O /opt/youtrack/youtrack-$YOUTRACK_VERSION.jar
 RUN ln -s /opt/youtrack/youtrack-$YOUTRACK_VERSION.jar /opt/youtrack/youtrack.jar
