@@ -3,6 +3,6 @@ teamcityserver:
   ports:
     - "8111:8111"
   volumes:
-    - <VOLUME_PATH>:/data/teamcity
+    - ~/.docker/volumes/teamcity:/data/teamcity
   environment:
     - STORAGE_PASSWORD=changeit
