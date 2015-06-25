@@ -1,0 +1,5 @@
+youtrack:
+  image: justdevelopers/youtrack
+  tty: true
+  ports:
+    - "8080:8080"
