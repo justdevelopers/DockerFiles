@@ -1,0 +1,8 @@
+teamcityserver:
+  image: justdevelopers/teamcity_server
+  ports:
+    - "8111:8111"
+  volumes:
+    - <VOLUME_PATH>:/data/teamcity
+  environment:
+    - STORAGE_PASSWORD=changeit
